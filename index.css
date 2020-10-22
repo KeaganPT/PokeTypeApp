@@ -1,0 +1,17 @@
+.searchForm{
+    text-align: center;
+    margin: 10px;
+}
+
+.results {
+    margin-left: 20%;
+    width:80%;
+   
+    
+}
+
+span {
+    background-color: #ccc;
+    padding: 5px;
+    margin: 5px;
+}
