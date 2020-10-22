@@ -22,13 +22,16 @@ function fetchType(e){
     url = baseURL + 'type/' + searchItem.value.toLowerCase();
     console.log(url);
 
+    console.log(searchItem.value);
+
     fetch(url)
         .then(function(result){
             return result.json();
         }) .then(function(json) {
             console.log(json);
             displayTypes(json);
-        })
+        });
+    searchItem.value = '';
 }
 
 function displayTypes(json){
@@ -89,11 +92,132 @@ function displayTypes(json){
     let paraHDamageFrom = document.createElement('p');
     let para0To = document.createElement('p');
     let para0From = document.createElement('p');
+    
+    //declaring span for results
+    // let span = document.createElement("span"); //! KEAGAN WHY AND PLEASE CLEAN 
+
+    //Function for checking the type and giviing it a background color (forgive me those who must read my cursed code)
+    // function styleType(typeName) {
+        
+    //     switch (typeName){
+    //         case 'normal': 
+    //             span.style.backgroundColor = "#a8a878";
+    //             break;
+    //         case 'fighting':
+    //             span.style.backgroundColor = "#c03028";
+    //             break;
+    //         case 'flying': 
+    //             span.style.backgroundColor = "#a890f0";
+    //             break;
+    //         case 'poison': 
+    //             span.style.backgroundColor = "#a040a0";
+    //             break;
+    //         case 'ground':
+    //             span.style.backgroundColor = "#e0c068";
+    //             break;
+    //         case 'rock':
+    //             span.style.backgroundColor = "#b8a038";
+    //             break;
+    //         case 'bug':
+    //             span.style.backgroundColor = "#a8b820";
+    //             break;
+    //         case 'ghost':
+    //             span.style.backgroundColor = "#705898";
+    //             break;
+    //         case 'steel':
+    //             span.style.backgroundColor = "#b8b8d0";
+    //             break;
+    //         case 'fire':
+    //             span.style.backgroundColor = "#f08030";
+    //             break;
+    //         case 'water':
+    //             span.style.backgroundColor = "#6890f0";
+    //             break;
+    //         case 'grass':
+    //             span.style.backgroundColor = "#6890f0";
+    //             break;
+    //         case 'electric':
+    //             span.style.backgroundColor = "#f8d030";
+    //             break;
+    //         case 'psychic' :
+    //             span.style.backgroundColor = "#f85888";
+    //             break;
+    //         case 'ice' :
+    //             span.style.backgroundColor = "#98d8d8";
+    //             break;
+    //         case 'dragon' :
+    //             span.style.backgroundColor = "#7037f8";
+    //             break;
+    //         case 'dark' :
+    //             span.style.backgroundColor = "#705848";
+    //             break;
+    //         case 'fairy':
+    //             span.style.backgroundColor = "#ee99ac";
+    //     }
+
+    // }
+
 
     //for loop createing span tags for double damage against these types
     for(type of doubleDamageTo){
         // console.log("Double Damage To:",type);
-        let span = document.createElement("span");
+        let span = document.createElement("span");        
+            switch (type.name){
+                case 'normal': 
+                    span.style.backgroundColor = "#a8a878";
+                    break;
+                case 'fighting':
+                    span.style.backgroundColor = "#c03028";
+                    break;
+                case 'flying': 
+                    span.style.backgroundColor = "#a890f0";
+                    break;
+                case 'poison': 
+                    span.style.backgroundColor = "#a040a0";
+                    break;
+                case 'ground':
+                    span.style.backgroundColor = "#e0c068";
+                    break;
+                case 'rock':
+                    span.style.backgroundColor = "#b8a038";
+                    break;
+                case 'bug':
+                    span.style.backgroundColor = "#a8b820";
+                    break;
+                case 'ghost':
+                    span.style.backgroundColor = "#705898";
+                    break;
+                case 'steel':
+                    span.style.backgroundColor = "#b8b8d0";
+                    break;
+                case 'fire':
+                    span.style.backgroundColor = "#f08030";
+                    break;
+                case 'water':
+                    span.style.backgroundColor = "#6890f0";
+                    break;
+                case 'grass':
+                    span.style.backgroundColor = "#6890f0";
+                    break;
+                case 'electric':
+                    span.style.backgroundColor = "#f8d030";
+                    break;
+                case 'psychic' :
+                    span.style.backgroundColor = "#f85888";
+                    break;
+                case 'ice' :
+                    span.style.backgroundColor = "#98d8d8";
+                    break;
+                case 'dragon' :
+                    span.style.backgroundColor = "#7037f8";
+                    break;
+                case 'dark' :
+                    span.style.backgroundColor = "#705848";
+                    break;
+                case 'fairy':
+                    span.style.backgroundColor = "#ee99ac";
+            }
+        span.style.color = 'white';
         span.innerText += type.name + '';
         paraDDamageTo.appendChild(span);
     }
@@ -101,7 +225,63 @@ function displayTypes(json){
     //for loop creating span tags for haalf damage against these types
     for(type of halfDamageTo){
         // console.log("Half Damage To:",type);
-        let span = document.createElement("span");
+        let span = document.createElement("span");            
+            switch (type.name){
+                case 'normal': 
+                    span.style.backgroundColor = "#a8a878";
+                    break;
+                case 'fighting':
+                    span.style.backgroundColor = "#c03028";
+                    break;
+                case 'flying': 
+                    span.style.backgroundColor = "#a890f0";
+                    break;
+                case 'poison': 
+                    span.style.backgroundColor = "#a040a0";
+                    break;
+                case 'ground':
+                    span.style.backgroundColor = "#e0c068";
+                    break;
+                case 'rock':
+                    span.style.backgroundColor = "#b8a038";
+                    break;
+                case 'bug':
+                    span.style.backgroundColor = "#a8b820";
+                    break;
+                case 'ghost':
+                    span.style.backgroundColor = "#705898";
+                    break;
+                case 'steel':
+                    span.style.backgroundColor = "#b8b8d0";
+                    break;
+                case 'fire':
+                    span.style.backgroundColor = "#f08030";
+                    break;
+                case 'water':
+                    span.style.backgroundColor = "#6890f0";
+                    break;
+                case 'grass':
+                    span.style.backgroundColor = "#6890f0";
+                    break;
+                case 'electric':
+                    span.style.backgroundColor = "#f8d030";
+                    break;
+                case 'psychic' :
+                    span.style.backgroundColor = "#f85888";
+                    break;
+                case 'ice' :
+                    span.style.backgroundColor = "#98d8d8";
+                    break;
+                case 'dragon' :
+                    span.style.backgroundColor = "#7037f8";
+                    break;
+                case 'dark' :
+                    span.style.backgroundColor = "#705848";
+                    break;
+                case 'fairy':
+                    span.style.backgroundColor = "#ee99ac";
+            }
+        span.style.color = 'white';
         span.innerText += type.name + '';
         paraHDamageTo.appendChild(span);
     }
@@ -110,6 +290,62 @@ function displayTypes(json){
     for(type of doubleDamageFrom){
         // console.log("Double Damage From:",type);
         let span = document.createElement("span");
+        switch (type.name){
+            case 'normal': 
+                span.style.backgroundColor = "#a8a878";
+                break;
+            case 'fighting':
+                span.style.backgroundColor = "#c03028";
+                break;
+            case 'flying': 
+                span.style.backgroundColor = "#a890f0";
+                break;
+            case 'poison': 
+                span.style.backgroundColor = "#a040a0";
+                break;
+            case 'ground':
+                span.style.backgroundColor = "#e0c068";
+                break;
+            case 'rock':
+                span.style.backgroundColor = "#b8a038";
+                break;
+            case 'bug':
+                span.style.backgroundColor = "#a8b820";
+                break;
+            case 'ghost':
+                span.style.backgroundColor = "#705898";
+                break;
+            case 'steel':
+                span.style.backgroundColor = "#b8b8d0";
+                break;
+            case 'fire':
+                span.style.backgroundColor = "#f08030";
+                break;
+            case 'water':
+                span.style.backgroundColor = "#6890f0";
+                break;
+            case 'grass':
+                span.style.backgroundColor = "#6890f0";
+                break;
+            case 'electric':
+                span.style.backgroundColor = "#f8d030";
+                break;
+            case 'psychic' :
+                span.style.backgroundColor = "#f85888";
+                break;
+            case 'ice' :
+                span.style.backgroundColor = "#98d8d8";
+                break;
+            case 'dragon' :
+                span.style.backgroundColor = "#7037f8";
+                break;
+            case 'dark' :
+                span.style.backgroundColor = "#705848";
+                break;
+            case 'fairy':
+                span.style.backgroundColor = "#ee99ac";
+        }
+        span.style.color = 'white';
         span.innerText += type.name + '';
         paraDDamageFrom.appendChild(span);
     }
@@ -118,6 +354,62 @@ function displayTypes(json){
     for(type of halfDamageFrom){
         // console.log("Half Damage From:",type);
         let span = document.createElement("span");
+        switch (type.name){
+            case 'normal': 
+                span.style.backgroundColor = "#a8a878";
+                break;
+            case 'fighting':
+                span.style.backgroundColor = "#c03028";
+                break;
+            case 'flying': 
+                span.style.backgroundColor = "#a890f0";
+                break;
+            case 'poison': 
+                span.style.backgroundColor = "#a040a0";
+                break;
+            case 'ground':
+                span.style.backgroundColor = "#e0c068";
+                break;
+            case 'rock':
+                span.style.backgroundColor = "#b8a038";
+                break;
+            case 'bug':
+                span.style.backgroundColor = "#a8b820";
+                break;
+            case 'ghost':
+                span.style.backgroundColor = "#705898";
+                break;
+            case 'steel':
+                span.style.backgroundColor = "#b8b8d0";
+                break;
+            case 'fire':
+                span.style.backgroundColor = "#f08030";
+                break;
+            case 'water':
+                span.style.backgroundColor = "#6890f0";
+                break;
+            case 'grass':
+                span.style.backgroundColor = "#6890f0";
+                break;
+            case 'electric':
+                span.style.backgroundColor = "#f8d030";
+                break;
+            case 'psychic' :
+                span.style.backgroundColor = "#f85888";
+                break;
+            case 'ice' :
+                span.style.backgroundColor = "#98d8d8";
+                break;
+            case 'dragon' :
+                span.style.backgroundColor = "#7037f8";
+                break;
+            case 'dark' :
+                span.style.backgroundColor = "#705848";
+                break;
+            case 'fairy':
+                span.style.backgroundColor = "#ee99ac";
+        }
+        span.style.color = 'white';
         span.innerText += type.name + '';
         paraHDamageFrom.appendChild(span);
     }
@@ -126,6 +418,62 @@ function displayTypes(json){
     for(type of noDamageTo){
         // console.log("No Damage To:",type);
         let span = document.createElement("span");
+        switch (type.name){
+            case 'normal': 
+                span.style.backgroundColor = "#a8a878";
+                break;
+            case 'fighting':
+                span.style.backgroundColor = "#c03028";
+                break;
+            case 'flying': 
+                span.style.backgroundColor = "#a890f0";
+                break;
+            case 'poison': 
+                span.style.backgroundColor = "#a040a0";
+                break;
+            case 'ground':
+                span.style.backgroundColor = "#e0c068";
+                break;
+            case 'rock':
+                span.style.backgroundColor = "#b8a038";
+                break;
+            case 'bug':
+                span.style.backgroundColor = "#a8b820";
+                break;
+            case 'ghost':
+                span.style.backgroundColor = "#705898";
+                break;
+            case 'steel':
+                span.style.backgroundColor = "#b8b8d0";
+                break;
+            case 'fire':
+                span.style.backgroundColor = "#f08030";
+                break;
+            case 'water':
+                span.style.backgroundColor = "#6890f0";
+                break;
+            case 'grass':
+                span.style.backgroundColor = "#6890f0";
+                break;
+            case 'electric':
+                span.style.backgroundColor = "#f8d030";
+                break;
+            case 'psychic' :
+                span.style.backgroundColor = "#f85888";
+                break;
+            case 'ice' :
+                span.style.backgroundColor = "#98d8d8";
+                break;
+            case 'dragon' :
+                span.style.backgroundColor = "#7037f8";
+                break;
+            case 'dark' :
+                span.style.backgroundColor = "#705848";
+                break;
+            case 'fairy':
+                span.style.backgroundColor = "#ee99ac";
+        }
+        span.style.color = 'white';
         span.innerText += type.name + '';
         para0To.appendChild(span);
     }
@@ -134,6 +482,62 @@ function displayTypes(json){
     for(type of noDamageFrom){
         // console.log("No Damage From",type);
         let span = document.createElement("span");
+        switch (type.name){
+            case 'normal': 
+                span.style.backgroundColor = "#a8a878";
+                break;
+            case 'fighting':
+                span.style.backgroundColor = "#c03028";
+                break;
+            case 'flying': 
+                span.style.backgroundColor = "#a890f0";
+                break;
+            case 'poison': 
+                span.style.backgroundColor = "#a040a0";
+                break;
+            case 'ground':
+                span.style.backgroundColor = "#e0c068";
+                break;
+            case 'rock':
+                span.style.backgroundColor = "#b8a038";
+                break;
+            case 'bug':
+                span.style.backgroundColor = "#a8b820";
+                break;
+            case 'ghost':
+                span.style.backgroundColor = "#705898";
+                break;
+            case 'steel':
+                span.style.backgroundColor = "#b8b8d0";
+                break;
+            case 'fire':
+                span.style.backgroundColor = "#f08030";
+                break;
+            case 'water':
+                span.style.backgroundColor = "#6890f0";
+                break;
+            case 'grass':
+                span.style.backgroundColor = "#6890f0";
+                break;
+            case 'electric':
+                span.style.backgroundColor = "#f8d030";
+                break;
+            case 'psychic' :
+                span.style.backgroundColor = "#f85888";
+                break;
+            case 'ice' :
+                span.style.backgroundColor = "#98d8d8";
+                break;
+            case 'dragon' :
+                span.style.backgroundColor = "#7037f8";
+                break;
+            case 'dark' :
+                span.style.backgroundColor = "#705848";
+                break;
+            case 'fairy':
+                span.style.backgroundColor = "#ee99ac";
+        }
+        span.style.color = 'white';
         span.innerText += type.name + '';
         para0From.appendChild(span);
     }
