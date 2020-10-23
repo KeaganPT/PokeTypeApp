@@ -1,3 +1,24 @@
+.jumbotron{
+    background-color: #e61b29;
+    color: rgb(238, 235, 235);
+    border-bottom: 30px solid black;
+}
+
+.flexboxDiv{
+    display: flex;
+    justify-content:center;
+}
+
+.pokeballButton{
+    width: 125px;
+    height: 125px;
+    margin-top: -112px;
+    
+    background-color: white;
+    border: 25px solid black;
+    border-radius: 50%;
+}
+
 .searchForm{
     text-align: center;
     margin: 10px;
