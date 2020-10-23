@@ -197,7 +197,7 @@ function displayTypes(json){
                     span.style.backgroundColor = "#6890f0";
                     break;
                 case 'grass':
-                    span.style.backgroundColor = "#6890f0";
+                    span.style.backgroundColor = "#78c850";
                     break;
                 case 'electric':
                     span.style.backgroundColor = "#f8d030";
@@ -261,7 +261,7 @@ function displayTypes(json){
                     span.style.backgroundColor = "#6890f0";
                     break;
                 case 'grass':
-                    span.style.backgroundColor = "#6890f0";
+                    span.style.backgroundColor = "#78c850";
                     break;
                 case 'electric':
                     span.style.backgroundColor = "#f8d030";
@@ -325,7 +325,7 @@ function displayTypes(json){
                 span.style.backgroundColor = "#6890f0";
                 break;
             case 'grass':
-                span.style.backgroundColor = "#6890f0";
+                span.style.backgroundColor = "#78c850";
                 break;
             case 'electric':
                 span.style.backgroundColor = "#f8d030";
@@ -389,7 +389,7 @@ function displayTypes(json){
                 span.style.backgroundColor = "#6890f0";
                 break;
             case 'grass':
-                span.style.backgroundColor = "#6890f0";
+                span.style.backgroundColor = "#78c850";
                 break;
             case 'electric':
                 span.style.backgroundColor = "#f8d030";
@@ -453,7 +453,7 @@ function displayTypes(json){
                 span.style.backgroundColor = "#6890f0";
                 break;
             case 'grass':
-                span.style.backgroundColor = "#6890f0";
+                span.style.backgroundColor = "#78c850";
                 break;
             case 'electric':
                 span.style.backgroundColor = "#f8d030";
@@ -517,7 +517,7 @@ function displayTypes(json){
                 span.style.backgroundColor = "#6890f0";
                 break;
             case 'grass':
-                span.style.backgroundColor = "#6890f0";
+                span.style.backgroundColor = "#78c850";
                 break;
             case 'electric':
                 span.style.backgroundColor = "#f8d030";
