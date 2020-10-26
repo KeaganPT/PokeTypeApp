@@ -11,6 +11,11 @@ const doubleDamFromDiv = document.querySelector("#doubleDamageTaken");
 const halfDamFromDiv = document.querySelector("#halfDamageTaken");
 const noDamToDiv = document.querySelector("#noDamTo");
 const noDamFromDiv = document.querySelector("#noDamFrom");
+const resultsDiv = document.querySelector(".searchResult");
+const image = document.querySelector("img");
+
+//hide image
+image.style.display = "none"
 
 const sections = document.querySelectorAll("section")
 
@@ -21,8 +26,10 @@ function fetchType(e){
     e.preventDefault();
     url = baseURL + 'type/' + searchItem.value.toLowerCase();
     console.log(url);
-
+    
     console.log(searchItem.value);
+
+    displayImg(searchItem.value.toLowerCase());
 
     fetch(url)
         .then(function(result){
@@ -33,6 +40,196 @@ function fetchType(e){
         });
     searchItem.value = '';
 }
+
+function displayImg(searchTerm){
+    let imgURL = baseURL + 'pokemon/';
+        
+        switch (searchTerm){
+            case 'normal': 
+            fetch(`${imgURL}snorlax`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                })
+                break;
+            case 'fighting':
+                fetch(`${imgURL}riolu`)
+                    .then(function(pokemon){
+                        return pokemon.json();
+                    }) .then(function(imgJson) {
+                        console.log(imgJson);
+                        image.src = imgJson.sprites.front_default;
+                        image.style.display = "inline-block";
+                    })
+                break;
+            case 'flying': 
+            fetch(`${imgURL}rookidee`)
+            .then(function(pokemon){
+                return pokemon.json();
+            }) .then(function(imgJson) {
+                console.log(imgJson);
+                image.src = imgJson.sprites.front_default;
+                image.style.display = "inline-block";
+            })
+                break;
+            case 'poison': 
+                fetch(`${imgURL}gulpin`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                })
+                break;
+            case 'ground':
+                fetch(`${imgURL}mudsdale`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'rock':
+                fetch(`${imgURL}rockruff`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'bug':
+                fetch(`${imgURL}kricketune`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'ghost':
+                fetch(`${imgURL}duskull`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'steel':
+                fetch(`${imgURL}melmetal`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'fire':
+                fetch(`${imgURL}cyndaquil`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'water':
+                fetch(`${imgURL}totodile`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'grass':
+                fetch(`${imgURL}skiddo`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'electric':
+                fetch(`${imgURL}boltund`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'psychic' :
+                fetch(`${imgURL}wobbuffet`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'ice' :
+                fetch(`${imgURL}vanillish`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'dragon' :
+                fetch(`${imgURL}druddigon`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'dark' :
+                fetch(`${imgURL}zorua`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            case 'fairy':
+                fetch(`${imgURL}florges`)
+                .then(function(pokemon){
+                    return pokemon.json();
+                }) .then(function(imgJson) {
+                    console.log(imgJson);
+                    image.src = imgJson.sprites.front_default;
+                    image.style.display = "inline-block";
+                });
+                break;
+            default: 
+                image.style.display = "none";
+        }
+}
+
 
 function displayTypes(json){
 
@@ -283,6 +480,12 @@ function displayTypes(json){
             }
         span.style.color = 'white';
         span.innerText += type.name + '';
+        if(paraHDamageTo.childElementCount == 5){
+            let linebreak = document.createElement('br');
+            let linebreak2 = document.createElement('br');
+            paraHDamageTo.appendChild(linebreak);
+            paraHDamageTo.appendChild(linebreak2);
+        }
         paraHDamageTo.appendChild(span);
     }
 
@@ -411,6 +614,12 @@ function displayTypes(json){
         }
         span.style.color = 'white';
         span.innerText += type.name + '';
+        if(paraHDamageFrom.childElementCount == 5){
+            let linebreak = document.createElement('br');
+            let linebreak2 = document.createElement('br');
+            paraHDamageFrom.appendChild(linebreak);
+            paraHDamageFrom.appendChild(linebreak2);
+        }
         paraHDamageFrom.appendChild(span);
     }
 
